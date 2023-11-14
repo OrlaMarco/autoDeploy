@@ -19,12 +19,14 @@ jobs:
         distribution: 'adopt'
         java-version: '11'
 
+    - name: create wrapper
+      run: mvn -N io.takari:maven:0.7.7:wrapper -Dmaven=3.8.1
+      
     - name: Make Maven Wrapper Executable
       run: chmod +x mvnw
       working-directory: autoDeploy
 
-    - name: create wrapper
-      run: mvn -N io.takari:maven:0.7.7:wrapper -Dmaven=3.8.1
+    
 
     - name: Build and Package Jar
       run: ./mvnw clean install -DskipTests=true
