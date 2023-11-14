@@ -5,11 +5,10 @@ on:
 jobs:
   deployment:
     runs-on: maven
-    environment: prod
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v3
         with:
           java-version: '11'
       - name: Run the Maven verify phase
-        run: mvn clean install
+        run: mvn --batch-mode --update-snapshots verify
