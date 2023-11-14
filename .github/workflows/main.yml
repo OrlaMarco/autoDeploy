@@ -21,7 +21,8 @@ jobs:
 
     - name: Build and Package Jar
       run: |
-        ./mvnw clean install -DskipTests=true
+       chmod +x autoDeploy.sh  # Adjust the path to your script
+          ./path/to/your-script.sh
       working-directory: autoDeploy
 
     - name: Upload Jar
