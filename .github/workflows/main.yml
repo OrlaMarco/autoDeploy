@@ -21,8 +21,8 @@ jobs:
 
     - name: Build and Package Jar
       run: |
-       chmod +x autoDeploy.sh  # Adjust the path to your script
-          ./path/to/your-script.sh
+         chmod +x script.sh
+          ./script.sh
       working-directory: autoDeploy
 
     - name: Upload Jar
