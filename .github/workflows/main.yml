@@ -8,6 +8,6 @@ jobs:
     steps:
       - name: build
         run: |
-          mvn clean install autoDeploy/blob/main/autoDeploy/pom.xml
+          mvn clean install ../autoDeploy/autoDeploy/pom.xml
           shell: cmd
           
