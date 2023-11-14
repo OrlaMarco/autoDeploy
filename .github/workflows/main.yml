@@ -3,8 +3,8 @@ on:
     branches:
       - main
 jobs:
-  deployment:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: windows-latest
     steps:
       - name: Run the Maven verify phase
         run: mvn clean install
