@@ -8,7 +8,4 @@ jobs:
     environment: prod
     steps:
     - name: Build with Maven
-      run: mvn clean install
-      
-    
-      
+      run: mvn clean install package --file pom.xml
