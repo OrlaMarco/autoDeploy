@@ -7,5 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build
-        run: mvn clean install autoDeploy/pom.xml
+        run: mvn -f autoDeploy/pom.xml
           
