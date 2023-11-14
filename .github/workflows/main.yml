@@ -18,7 +18,7 @@ jobs:
       with:
         distribution: 'adopt'
         java-version: '11'
-        
+
     - name: Make Maven Wrapper Executable
       run: chmod +x mvnw
       working-directory: autoDeploy
