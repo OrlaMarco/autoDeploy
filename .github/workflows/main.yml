@@ -7,5 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build
-        run: mvn -f
+        run: mvn clean install
           
