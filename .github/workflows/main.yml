@@ -7,4 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build
-        run: mvn -e "autoDeploy/pom.xml"
+        uses: comchangs/action-maven@v0.4-beta
+          
