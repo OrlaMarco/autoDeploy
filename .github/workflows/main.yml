@@ -1,11 +1,30 @@
-on: 
+name: Build and Package Jar
+
+on:
   push:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: build
-        uses: comchangs/action-maven@54db702e085ac767dad94c87e84499afb9d77162
-          
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '11'
+
+    - name: Build and Package Jar
+      run: |
+        ./mvnw clean install -DskipTests=true
+      working-directory: autoDeploy
+
+    - name: Upload Jar
+      uses: actions/upload-artifact@v2
+      with:
+        path: autoDeploy/target/*.jar
