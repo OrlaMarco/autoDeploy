@@ -14,6 +14,6 @@ public class AutoDeployController {
 
     @GetMapping("/test")
     public ResponseEntity<String> getTest(){
-        return new ResponseEntity<>("Test succesful", HttpStatus.OK);
+        return new ResponseEntity<>("Test succesful and built", HttpStatus.OK);
     }
 }
