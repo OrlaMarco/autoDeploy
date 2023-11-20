@@ -26,4 +26,5 @@ jobs:
     - name: Upload JAR file
       uses: actions/upload-artifact@v3
       with:
+        name: autoDeploy
         path: autoDeploy/target/*.jar
