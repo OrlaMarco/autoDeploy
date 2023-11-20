@@ -21,7 +21,7 @@ jobs:
         java-version: '11'
 
     - name: Build with Maven
-      run: mvn -B clean install
+      run: mvn -B clean install --file autoDeploy/pom.xml
 
     - name: Upload JAR file
       uses: actions/upload-artifact@v2
