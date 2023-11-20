@@ -1,5 +1,10 @@
+name: Build JAR with Maven
+
 on:
-  - push
+  push:
+    branches:
+      - main
+
 jobs:
   build:
 
@@ -16,10 +21,10 @@ jobs:
         java-version: '11'
 
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -B clean install
 
     - name: Upload JAR file
       uses: actions/upload-artifact@v2
       with:
         name: my-java-app
-        path: target/*.jar
+        path: target/*.jar.
