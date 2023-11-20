@@ -30,4 +30,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: autoDeploy
-        path: autoDeploy/target/*.jar.
+        path: target/*.jar.
