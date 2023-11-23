@@ -36,11 +36,14 @@ jobs:
         path: artifacts
 
     - name: Deploy to Server
-      uses: appleboy/scp-action@v1.0
+      uses: appleboy/scp-action@v0.1.4
       with:
         host: ${{ secrets.STAGING_HOST }}
         password: ${{ secrets.STAGING_PASSWORD }}
         username: ${{ secrets.SSH_USERNAME }}
-        source: "artifacts/*.jar"
-        target: "/unicorn-manager-test-01/"
-        #target: /home/aviotti/unicorn-manager-test-01/
+
+        script: |
+          cd "/home/aviotti/unicorn-manager-test-01/"
+          git pull
+
+          
