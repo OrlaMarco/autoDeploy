@@ -1,4 +1,4 @@
-name: Build JAR with Maven
+name: Continuous Deployement
 
 on:
   push:
