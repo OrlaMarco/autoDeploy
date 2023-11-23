@@ -36,7 +36,7 @@ jobs:
         path: artifacts
 
     - name: Deploy to Server
-      uses: appleboy/scp-action@v0.1.4
+      uses: appleboy/sftp-action@v1
       with:
         host: ${{ secrets.STAGING_HOST }}
         password: ${{ secrets.STAGING_PASSWORD }}
