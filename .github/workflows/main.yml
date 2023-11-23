@@ -38,5 +38,3 @@ jobs:
 
         script: |
           cd unicorn-manager-test-01
-          git stash
-          git pull
