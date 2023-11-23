@@ -28,3 +28,15 @@ jobs:
       with:
         name: autoDeploy
         path: autoDeploy/target/*.jar
+
+    - name: Deployment
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        username: ${{ secrets.SSH_USERNAME }}
+
+        script: |
+          cd unicorn-manager-test-01
+          git stash
+          git pull
