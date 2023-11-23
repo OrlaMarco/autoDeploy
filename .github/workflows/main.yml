@@ -29,21 +29,13 @@ jobs:
         name: autoDeploy
         path: autoDeploy/target/*.jar
 
-    - name: Download JAR artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: autoDeploy
-        path: artifacts
-
-    - name: Deploy to Server
-      uses: appleboy/scp-action@v0.1.4
+    - name: Deployment
+      uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.STAGING_HOST }}
         password: ${{ secrets.STAGING_PASSWORD }}
         username: ${{ secrets.SSH_USERNAME }}
 
         script: |
-          cd "/home/aviotti/unicorn-manager-test-01/"
+          cd unicorn-manager-test-01
           git pull
-
-          
