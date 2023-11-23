@@ -29,7 +29,13 @@ jobs:
         name: autoDeploy
         path: autoDeploy/target/*.jar
 
-    - name: Deployment
+    - name: Download JAR artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: my-java-app
+        path: artifacts
+
+    - name: Deploy to Server
       uses: appleboy/scp-action@v2
       with:
         host: ${{ secrets.STAGING_HOST }}
