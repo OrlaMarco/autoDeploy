@@ -42,4 +42,5 @@ jobs:
         password: ${{ secrets.STAGING_PASSWORD }}
         username: ${{ secrets.SSH_USERNAME }}
         source: "artifacts/*.jar"
-        target: /home/aviotti/unicorn-manager-test-01/
+        target: "/unicorn-manager-test-01/"
+        #target: /home/aviotti/unicorn-manager-test-01/
