@@ -37,6 +37,5 @@ jobs:
         password: ${{ secrets.STAGING_PASSWORD }}
         username: ${{ secrets.SSH_USERNAME }}
 
-        script: tar -cvf /tmp/OpTkaVYlWW.tar.gz target/*.jar
-
+        source: "autoDeploy/target/*.jar"
         target: "/unicorn-manager-test-01/"
