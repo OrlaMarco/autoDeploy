@@ -30,10 +30,12 @@ jobs:
         password: ${{ secrets.STAGING_PASSWORD }}
         username: ${{ secrets.SSH_USERNAME }}
         source: "autoDeploy/target/*.jar"
-        target: "/home/aviotti/unicorn-manager/"
+        target: "/home/aviotti/autoDeploy/"
 
     - name: Adjust Directory
-        script:|
-          cd autoDeploy/target
-          mv *.jar /home/aviotti/unicorn-manager
-          rmdir autoDeploy
+        run:|
+            cd autoDeploy/target
+            mv *.jar /home/aviotti/unicorn-manager
+            cd ..
+            cd ..
+            rmdir autoDeploy
