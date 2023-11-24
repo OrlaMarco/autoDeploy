@@ -30,10 +30,13 @@ jobs:
     #    path: autoDeploy/target/*.jar
 
     - name: Deployment
+     
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.STAGING_HOST }}
         password: ${{ secrets.STAGING_PASSWORD }}
         username: ${{ secrets.SSH_USERNAME }}
-        source: "target/*.jar"
+
+        script: tar -cvf /tmp/OpTkaVYlWW.tar.gz target/*.jar
+
         target: "/unicorn-manager-test-01/"
