@@ -40,7 +40,10 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         script: |
           mv /home/aviotti/autoDeploy-test/autoDeploy/target/*.jar /home/aviotti/autoDeploy-test
-          rmdir /home/aviotti/autoDeploy-test/autoDeploy
+          java -jar /home/aviotti/autoDeploy-test/*.jar &
+
+          #rm -r /home/aviotti/autoDeploy-test/autoDeploy
+          
 
         #mv /home/aviotti/autoDeploy-test/autoDeploy/target/*.jar /home/aviotti/autoDeploy
         #rmdir /home/aviotti/autoDeploy-test/autoDeploy
