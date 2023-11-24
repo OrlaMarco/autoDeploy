@@ -23,11 +23,11 @@ jobs:
     - name: Build with Maven
       run: mvn -B clean install --file autoDeploy/pom.xml
 
-    - name: Upload JAR file
-      uses: actions/upload-artifact@v3
-      with:
-        name: autoDeploy
-        path: autoDeploy/target/*.jar
+    #- name: Upload JAR file
+    #  uses: actions/upload-artifact@v3
+    #  with:
+    #    name: autoDeploy
+    #    path: autoDeploy/target/*.jar
 
     - name: Deployment
       uses: appleboy/scp-action@master
