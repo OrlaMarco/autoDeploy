@@ -33,9 +33,9 @@ jobs:
         target: "/home/aviotti/autoDeploy/"
 
     - name: Adjust Directory
-        run:|
-            cd autoDeploy/target
-            mv *.jar /home/aviotti/unicorn-manager
-            cd ..
-            cd ..
-            rmdir autoDeploy
+      run: |
+          cd autoDeploy/target
+          mv *.jar /home/aviotti/unicorn-manager
+          cd ..
+          cd ..
+          rmdir autoDeploy
