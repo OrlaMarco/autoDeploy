@@ -20,16 +20,10 @@ jobs:
         distribution: 'adopt'
         java-version: '11'
 
-    - name: Build with Maven
+    - name: Build JAR with Maven
       run: mvn -B clean install --file autoDeploy/pom.xml
 
-    #- name: Upload JAR file
-    #  uses: actions/upload-artifact@v3
-    #  with:
-    #    name: autoDeploy
-    #    path: autoDeploy/target/*.jar
-
-    - name: Deployment
+    - name: Transfer JAR
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.STAGING_HOST }}
@@ -37,3 +31,9 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         source: "autoDeploy/target/*.jar"
         target: "/home/aviotti/unicorn-manager/"
+
+    - name: Adjust Directory
+        script:|
+          cd autoDeploy/target
+          mv *.jar /home/aviotti/unicorn-manager
+          rmdir autoDeploy
