@@ -30,7 +30,7 @@ jobs:
         password: ${{ secrets.STAGING_PASSWORD }}
         username: ${{ secrets.SSH_USERNAME }}
         source: "autoDeploy/target/*.jar"
-        target: "/home/aviotti/autoDeploy/"
+        target: "/home/aviotti/autoDeploy-test/"
 
         script: |
           mv /home/aviotti/autoDeploy-test/autoDeploy/target/*.jar /home/aviotti/autoDeploy
