@@ -35,5 +35,5 @@ jobs:
         host: ${{ secrets.STAGING_HOST }}
         password: ${{ secrets.STAGING_PASSWORD }}
         username: ${{ secrets.SSH_USERNAME }}
-        source: "/target/*.jar"
-        target: "/home/aviotti/unicorn-manager-test-01/"
+        source: /target/*.jar
+        target: /home/aviotti/unicorn-manager-test-01/
