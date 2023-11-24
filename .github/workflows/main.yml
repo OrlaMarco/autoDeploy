@@ -36,4 +36,4 @@ jobs:
         password: ${{ secrets.STAGING_PASSWORD }}
         username: ${{ secrets.SSH_USERNAME }}
         source: "autoDeploy/target/*.jar"
-        target: "/home/aviotti/unicorn-manager-test-01/"
+        target: "unicorn-manager-test-01"
