@@ -30,7 +30,7 @@ jobs:
     #    path: autoDeploy/target/*.jar
 
     - name: Deployment
-      uses: appleboy/ssh-action@master
+      uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.STAGING_HOST }}
         password: ${{ secrets.STAGING_PASSWORD }}
