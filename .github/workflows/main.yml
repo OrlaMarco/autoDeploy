@@ -35,5 +35,7 @@ jobs:
         host: ${{ secrets.STAGING_HOST }}
         password: ${{ secrets.STAGING_PASSWORD }}
         username: ${{ secrets.SSH_USERNAME }}
-        source: "autoDeplot/target/*.jar"
-        target: "/unicorn-manager-test-01/"
+        #source: "autoDeploy/target/*.jar"
+        #target: "/unicorn-manager-test-01/"
+
+        script: ls autoDeploy/target/
