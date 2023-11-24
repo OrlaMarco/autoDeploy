@@ -35,7 +35,7 @@ jobs:
         host: ${{ secrets.STAGING_HOST }}
         password: ${{ secrets.STAGING_PASSWORD }}
         username: ${{ secrets.SSH_USERNAME }}
-        source: "*.jar"
+        source: "target/*.jar"
         target: "/home/aviotti/unicorn-manager/"
         #run: |
          # apt install sshpass
