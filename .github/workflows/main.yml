@@ -34,4 +34,4 @@ jobs:
 
     - name: Adjust Directory
       run: |
-          mv autoDeploy/target/*.jar /home/aviotti/autoDeploy
+          mv /home/aviotti/autoDeploy/autoDeploy/target/*.jar /home/aviotti/autoDeploy
