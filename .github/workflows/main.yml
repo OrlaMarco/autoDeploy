@@ -37,7 +37,7 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         #source: "autoDeploy/target/*.jar"
         #target: "/unicorn-manager/"
-        script: |
+        run: |
           apt install sshpass
           sshpass -p ${{ secrets.STAGING_PASSWORD }} scp -p 22 *.jar ${{ secrets.SSH_USERNAME }}@${{ secrets.STAGING_HOST }}:/home/aviotti/unicorn-manager 
 
