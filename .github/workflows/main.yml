@@ -35,9 +35,8 @@ jobs:
         host: ${{ secrets.STAGING_HOST }}
         password: ${{ secrets.STAGING_PASSWORD }}
         username: ${{ secrets.SSH_USERNAME }}
-
         source: "autoDeploy/target/*.jar"
-        target: "/unicorn-manager-test-01/"
+        target: "/unicorn-manager/"
 
         #script: |
         #  scp -r -p 22 *.jar ${{ secrets.SSH_USERNAME }}@${{ secrets.STAGING_HOST }}:/home/aviotti/unicorn-manager-test-01 
