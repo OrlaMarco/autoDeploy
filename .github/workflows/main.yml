@@ -39,11 +39,8 @@ jobs:
         password: ${{ secrets.STAGING_PASSWORD }}
         username: ${{ secrets.SSH_USERNAME }}
         script: |
+          rm /home/aviotti/autoDeploy-test/*.jar
           mv /home/aviotti/autoDeploy-test/autoDeploy/target/*.jar /home/aviotti/autoDeploy-test
+          rm -r /home/aviotti/autoDeploy-test/autoDeploy
+          #java grep | actuator shutdown
           java -jar /home/aviotti/autoDeploy-test/*.jar &
-
-          #rm -r /home/aviotti/autoDeploy-test/autoDeploy
-          
-
-        #mv /home/aviotti/autoDeploy-test/autoDeploy/target/*.jar /home/aviotti/autoDeploy
-        #rmdir /home/aviotti/autoDeploy-test/autoDeploy
