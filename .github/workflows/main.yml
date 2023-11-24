@@ -31,8 +31,14 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         source: "autoDeploy/target/*.jar"
         target: "/home/aviotti/autoDeploy-test/"
-
-        run: |
+        
+    - name: Adjust Directory
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.STAGING_HOST }}
+        password: ${{ secrets.STAGING_PASSWORD }}
+        username: ${{ secrets.SSH_USERNAME }}
+        script: |
           mv /home/aviotti/autoDeploy-test/autoDeploy/target/*.jar /home/aviotti/autoDeploy-test
 
         #mv /home/aviotti/autoDeploy-test/autoDeploy/target/*.jar /home/aviotti/autoDeploy
