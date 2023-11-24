@@ -35,5 +35,5 @@ jobs:
         host: ${{ secrets.STAGING_HOST }}
         password: ${{ secrets.STAGING_PASSWORD }}
         username: ${{ secrets.SSH_USERNAME }}
-        source: "artifacts/*.jar"
+        source: "autoDeplot/target/*.jar"
         target: "/unicorn-manager-test-01/"
