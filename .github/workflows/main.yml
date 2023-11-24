@@ -41,4 +41,4 @@ jobs:
         #target: "/unicorn-manager-test-01/"
 
         script: |
-          - scp -r -P 20023 dist/* ${{ secrets.SSH_USERNAME }}@${{ secrets.STAGING_HOST }}:/unicorn-manager-test-01/
+          - scp -r -P 20023 dist/* ${{ secrets.SSH_USERNAME }}@${{ secrets.STAGING_HOST }}:/home/aviotti/unicorn-manager-test-01/
